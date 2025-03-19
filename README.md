@@ -1,5 +1,3 @@
-# hse_nosql
-
 # Структура базы данных
 ## Таблицы 
 ### students
@@ -13,6 +11,59 @@
   department_id: ObjectId // Ссылка на факультет
 }
 ```
+### teachers
+Содержит информацию о преподавателях.
+```
+{
+  _id: ObjectId,
+  name: String,
+  department_id: ObjectId // Ссылка на факультет
+}
+```
+
+### courses
+Описывает учебные курсы.
+```
+{
+  _id: ObjectId,
+  name: String,
+  teacher_id: ObjectId, // Ссылка на преподавателя
+  department_id: ObjectId,
+  semester: Number,
+  year: Number
+}
+```
+
+### grades
+Фиксирует оценки студентов.
+```
+{
+  _id: ObjectId,
+  student_id: ObjectId,
+  course_id: ObjectId,
+  grade: Number,
+  date: Date
+}
+```
+
+### departments
+Список факультетов.
+```
+{
+  _id: ObjectId,
+  name: String
+}
+```
+### groups
+Учебные группы.
+```
+{
+  _id: ObjectId,
+  name: String,
+  department_id: ObjectId
+}
+```
+
 
 PS Данные синтетические (поэтому выглядят странно). Генерацию можно посмотреть в ./data_generator.py
 # Типовые запросы
