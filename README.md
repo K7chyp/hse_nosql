@@ -68,11 +68,11 @@
 Они создаются одинаково, поэтому просто сделал для всех вот так
 ![alt text](image-15.png)
 
-grades.student_id (поиск оценок студента).
-grades.course_id (поиск оценок по курсу).
-students.group_id (фильтрация студентов по группе).
-courses.teacher_id (поиск курсов преподавателя).
-Составной индекс grades.student_id + grades.course_id для частых JOIN-подобных запросов.
+- grades.student_id (поиск оценок студента).
+- grades.course_id (поиск оценок по курсу).
+- students.group_id (фильтрация студентов по группе).
+- courses.teacher_id (поиск курсов преподавателя).
+- Составной индекс grades.student_id + grades.course_id 
 
 # Типовые запросы
 PS Данные синтетические (поэтому выглядят странно). Генерацию можно посмотреть в ./data_generator.py
